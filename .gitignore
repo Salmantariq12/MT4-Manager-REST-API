@@ -1,0 +1,56 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vspscc
+*.vssscc
+
+# Build outputs
+*.exe
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+*.log
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET
+[Aa]pp_[Dd]ata/
+[Aa]pp_[Bb]rowsers/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+
+# Sensitive files - DO NOT COMMIT
+appsettings.Development.json
+appsettings.Production.json
+
+# Self-contained deployment (can be regenerated)
+MT4RestApi_SelfContained/
+
+# MT4 Proprietary files (users must obtain from MetaQuotes)
+mtmanapi.dll
+MT4ManagerAPI.h

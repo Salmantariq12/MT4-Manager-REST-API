@@ -1,0 +1,19 @@
+LIBRARY MT4Wrapper
+EXPORTS
+    MT4_Initialize
+    MT4_Shutdown
+    MT4_Connect
+    MT4_Login
+    MT4_Disconnect
+    MT4_IsConnected
+    MT4_GetLastError
+    MT4_Ping
+    MT4_GetUserInfo
+    MT4_GetAllUsers
+    MT4_GetTrades
+    MT4_OpenTrade
+    MT4_CloseTrade
+    MT4_GetSymbols
+    MT4_CreateUser
+    MT4_UpdateUser
+    MT4_DeleteUser

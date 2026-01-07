@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputType>Exe</OutputType>
+    <UseAppHost>true</UseAppHost>
+    <PlatformTarget>x86</PlatformTarget>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <Platform>x86</Platform>
+    <Platforms>x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="nul" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.4.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\mtmanapi.dll" CopyToOutputDirectory="Always">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>mtmanapi.dll</Link>
+    </None>
+    <None Include="..\MT4Wrapper\Release\MT4Wrapper.dll" CopyToOutputDirectory="Always">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>MT4Wrapper.dll</Link>
+    </None>
+  </ItemGroup>
+  
+  <!-- Ensure DLLs are copied on build -->
+  <Target Name="CopyMT4DLLs" AfterTargets="Build">
+    <Copy SourceFiles="..\mtmanapi.dll;..\MT4Wrapper\Release\MT4Wrapper.dll" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="false" />
+  </Target>
+
+</Project>
